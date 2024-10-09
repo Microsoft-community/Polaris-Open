@@ -1,14 +1,14 @@
 {
-  "test_server_ids": ["12345678"],
+  "test_server_ids": ["885928970137260093"],
 
-  "developer_ids": ["12345678"],
+  "developer_ids": ["228574821590499329", "159016432498114560"],
 
   "lockBotToDevOnly": false,
-  
+
   "enableWebServer": true,
   "serverPort": 6880,
-  "siteURL": "http://localhost:6880",
-  
+  "siteURL": "https://leveldev.erisa.cloud",
+
   "changelogURL": "",
   "supportURL": ""
 }

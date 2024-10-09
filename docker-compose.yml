@@ -1,0 +1,30 @@
+services:
+
+  bot: 
+    build: .
+    depends_on:
+      - mongodb
+    env_file: .env
+    restart: on-failure
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /app/config.json
+    
+  mongodb:
+    image: mongo:8.0-noble
+    restart: on-failure
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: erisa
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - type: bind
+        source: ./dbdata
+        target: /data/db
+
+  cloudflared:
+    image: erisamoe/cloudflared
+    restart: always
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
