@@ -21,7 +21,7 @@ async run(client, int, tools) {
     .then(x => {
         if (typeof x !== "string") x = util.inspect(x)
         int.reply(x || "** **").catch((e) => {
-            int.reply("✅").catch(() => {})
+            int.reply("<:SolarisSuccess:1293767583971016805>").catch(() => {})
         });
     })
     .catch(e => { int.reply(`**Error:** ${e.message}`); console.warn(e) })

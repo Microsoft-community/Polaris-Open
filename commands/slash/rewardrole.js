@@ -66,6 +66,6 @@ async run(client, int, tools) {
     }
 
     // otherwise, just add the role
-    return finish(`✅ **<@&${role.id}> will now be granted at level ${level}!**${extraStr}`)
+    return finish(`<:SolarisSuccess:1293767583971016805> **<@&${role.id}> will now be granted at level ${level}!**${extraStr}`)
 
 }}

@@ -48,7 +48,7 @@ async run(client, int, tools) {
                if (!confirmed) return msg.reply("Update cancelled")
                else {
                     client.db.update(guildID, { $set: { [propertyName.value]: val } }).exec().then(() => {
-                        msg.reply(`✅ Successfully updated **${propertyName.value}**!`)
+                        msg.reply(`<:SolarisSuccess:1293767583971016805> Successfully updated **${propertyName.value}**!`)
                     }).catch(e => msg.reply("Update failed! " + e.message))
                }
             }

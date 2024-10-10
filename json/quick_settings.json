@@ -2,7 +2,7 @@
 
     "home": [
         { "groupName": "Quick settings" },
-        { "emoji": "✨", "name": "General", "folder": "general" },
+        { "emoji": "<:SolarisXP:1293767639121793118>", "name": "General", "folder": "general" },
         { "emoji": "🎁", "name": "Levelling", "folder": "level" },
         { "emoji": "📊", "name": "Rank and Leaderboard", "folder": "rank" }
     ],

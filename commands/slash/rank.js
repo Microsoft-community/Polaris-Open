@@ -65,15 +65,15 @@ async run(client, int, tools) {
         color: memberColor,
         footer: maxLevel ? progressBar : ((estimatedMin == Infinity || estimatedMin < 0) ? "You are unable to gain XP!" : `${progressBar}\n${estimatedRange} to go!`),
         fields: [
-            { name: "✨ XP", value: `${tools.commafy(xp)} (lv. ${levelData.level})`, inline: true },
-            { name: "⏩ Next level", value: !maxLevel ? nextLevelXP : "Max level! Woah!", inline: true },
+            { name: "<:SolarisXP:1293767639121793118> XP", value: `${tools.commafy(xp)} (lv. ${levelData.level})`, inline: true },
+            { name: "<:SolarisNextLevel:1293767567734739025> Next level", value: !maxLevel ? nextLevelXP : "Max level! Woah!", inline: true },
         ]
     })
 
     if (!db.settings.rankCard.hideCooldown) {
         let foundCooldown = currentXP.cooldown || 0
         let cooldown = foundCooldown > Date.now() ? tools.timestamp(foundCooldown - Date.now()) : "None!"
-        embed.addFields([{ name: "🕓 Cooldown", value: cooldown, inline: true }])
+        embed.addFields([{ name: "<:SolarisTimeout:1293767618842329189> Cooldown", value: cooldown, inline: true }])
     }
 
     let hideMult = db.settings.hideMultipliers

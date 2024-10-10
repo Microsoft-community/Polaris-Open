@@ -72,6 +72,6 @@ async run(client, int, tools) {
         return finish(`📝 **${tag} now gives ${boostStr}!** (previously ${foundExisting.boost}x)`)
     }
     
-    return finish(`✅ **${tag} now gives ${boostStr}!**`)
+    return finish(`<:SolarisSuccess:1293767583971016805> **${tag} now gives ${boostStr}!**`)
 
 }}

@@ -58,7 +58,7 @@ async run(client, int, tools) {
         name = ""
     }
     
-    int.reply("✅ **Status updated!**")
+    int.reply("<:SolarisSuccess:1293767583971016805> **Status updated!**")
 
     statusInfo.name = name
     statusInfo.state = state || ""

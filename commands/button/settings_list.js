@@ -35,7 +35,7 @@ async run(client, int, tools, selected) {
     }
 
     function getDataEmoji(type, val) {
-        if (type == "bool") return val ? "✅" : "❎"
+        if (type == "bool") return val ? "<:SolarisSuccess:1293767583971016805>" : "❎"
         else if (type == "int" || type == "float") return "#️⃣"
         else return "📝"
     }

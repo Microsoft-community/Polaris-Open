@@ -12,7 +12,7 @@ async run(client, int, tools) {
     if (!tools.canManageServer(int.member, db.settings.manualPerms)) return tools.warn("*notMod")
 
     let polarisSettings = [
-        `**✨ XP enabled: __${settings.enabled ? "Yes!" : "No!"}__**`,
+        `**<:SolarisXP:1293767639121793118> XP enabled: __${settings.enabled ? "Yes!" : "No!"}__**`,
         `**XP per message:** ${settings.gain.min == settings.gain.max ? tools.commafy(settings.gain.min) : `${tools.commafy(settings.gain.min)} - ${tools.commafy(settings.gain.max)}`}`,
         `**XP cooldown:** ${tools.commafy(settings.gain.time)} ${tools.extraS("sec", settings.gain.time)}`,
         `**XP curve:** ${settings.curve[3]}x³ + ${settings.curve[2]}x² + ${settings.curve[1]}x`,
@@ -30,7 +30,7 @@ async run(client, int, tools) {
 
     let toggleButton = settings.enabled ?
       {style: "Danger", label: "Disable XP", emoji: "❕", customId: "toggle_xp" }
-    : {style: "Success", label: "Enable XP", emoji: "✨", customId: "toggle_xp" }
+    : {style: "Success", label: "Enable XP", emoji: "<:SolarisXP:1293767639121793118>", customId: "toggle_xp" }
 
     let buttons = tools.button([
         {style: "Success", label: "Edit Settings", emoji: "🛠", customID: "settings_list"},

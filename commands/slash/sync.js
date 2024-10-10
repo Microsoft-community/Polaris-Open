@@ -32,7 +32,7 @@ async run(client, int, tools) {
 
     let currentRoles = member.roles.cache
     let roleCheck = tools.checkLevelRoles(int.guild.roles.cache, currentRoles, level, db.settings.rewards)
-    if (!roleCheck.incorrect.length && !roleCheck.missing.length) return int.reply("✅ Your level roles are already properly synced!")
+    if (!roleCheck.incorrect.length && !roleCheck.missing.length) return int.reply("<:SolarisSuccess:1293767583971016805> Your level roles are already properly synced!")
 
     tools.syncLevelRoles(member, roleCheck).then(() => {
         let replyStr = ["🔄 **Level roles successfully synced!**"]
