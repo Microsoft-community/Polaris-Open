@@ -15,8 +15,8 @@ services:
     image: mongo:8.0-noble
     restart: on-failure
     environment:
-      MONGO_INITDB_ROOT_USERNAME: erisa
-      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_DB_PASSWORD}
     volumes:
       - type: bind
         source: ./dbdata
@@ -28,3 +28,5 @@ services:
     command: tunnel --no-autoupdate run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - bot

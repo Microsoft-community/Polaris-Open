@@ -4,7 +4,7 @@ RUN apk add build-base python3
 
 WORKDIR /app
 COPY package*.json .
-RUN npm i
+RUN npm ci
 
 COPY . .
 
