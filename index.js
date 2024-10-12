@@ -21,7 +21,7 @@ const startTime = Date.now()
 const client = new Discord.Client({
     allowedMentions: { parse: ["users"] },
     makeCache: Discord.Options.cacheWithLimits({ MessageManager: 0 }),
-    intents: ['Guilds', 'GuildMessages', 'DirectMessages', 'GuildVoiceStates'].map(i => Discord.GatewayIntentBits[i]),
+    intents: ['Guilds', 'GuildMessages', 'DirectMessages', 'GuildVoiceStates', 'GuildMembers'].map(i => Discord.GatewayIntentBits[i]),
     partials: ['Channel'].map(p => Discord.Partials[p]),
     failIfNotExists: false
 })
@@ -124,6 +124,21 @@ client.on("interactionCreate", async int => {
     try { await foundCommand.run(client, int, tools) }
     catch(e) { console.error(e); int.reply({ content: "**Error!** " + e.message, ephemeral: true }) }
 })
+
+// on join
+client.on("guildMemberAdd", async (member) => {
+    console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
+    
+    // get user data
+    let tools = new Tools(client)
+    let db = await tools.fetchSettings(member.id, member.guild.id)
+    let userData = db.users[member.id] || { xp: 0, cooldown: 0 }
+    let level = tools.getLevel(userData.xp, db.settings)
+
+    let roleCheck = tools.checkLevelRoles(member.guild.roles.cache, member.roles.cache, level, db.settings.rewards)
+    tools.syncLevelRoles(member, roleCheck)
+});
+
 
 client.on('error', e => console.warn(e))
 client.on('warn', e => console.warn(e))
