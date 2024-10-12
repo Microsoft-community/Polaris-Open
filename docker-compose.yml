@@ -10,6 +10,9 @@ services:
       - type: bind
         source: ./config.json
         target: /app/config.json
+      - type: bind
+        source: ./json/auto
+        target: /app/json/auto
     
   mongodb:
     image: mongo:8.0-noble
